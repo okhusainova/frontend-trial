@@ -7,32 +7,49 @@
     <link rel="stylesheet" href="destination/style.css">
 </head>
 <body>
-<div class="header-sticky">
-    <div class="header-sticky-top">
-        <div class="header-sticky-top__list">
-            <div class="header-sticky-top__menu"><img src="src/img/menu.svg" width="24px" alt=""></div>
-            <div class="header-sticky-top__logo"><img src="src/img/Logo.svg" alt=""></div>
-            <div class="header-sticky-top__search"><img src="src/img/search.svg" width="18px" alt=""></div>
-        </div>
-    </div>
-    <div class="header-sticky-bottom">
-        <div class="header-sticky-list">
-            <div class="header-sticky-list__item"><a href="#">Demos</a></div>
-            <div class="header-sticky-list__item header-sticky-list__item_hover">
-                <a href="#">Post</a>
-                <ul class="submenu">
-                    <li class="submenu__item"><a href="#">Post Header</a></li>
-                    <li class="submenu__item"><a href="#">Post Layout</a></li>
-                    <li class="submenu__item"><a href="#">Share Buttons</a></li>
-                    <li class="submenu__item"><a href="#">Gallery Post</a></li>
-                    <li class="submenu__item"><a href="#">Video Post</a></li>
+<div class="header-top">
+    <div class="header-top__list">
+        <div class="header-top__menu"><img src="src/img/menu.svg" width="24px" alt=""></div>
+        <div id="nav-container" class="nav-container _hide-on-desktop">
+            <div class="bg"></div>
+            <div class="button" tabindex="0">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </div>
+            <div id="nav-content" tabindex="0">
+                <ul>
+                    <li><a href="#">Demos</a></li>
+                    <li><a href="#">Post</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Buy Now</a></li>
+
                 </ul>
             </div>
-            <div class="header-sticky-list__item"><a href="#">Features</a></div>
-            <div class="header-sticky-list__item"><a href="#">Categories</a></div>
-            <div class="header-sticky-list__item"><a href="#">Shop</a></div>
-            <div class="header-sticky-list__item"><a href="#">Buy Now</a></div>
         </div>
+        <div class="header-top__logo"><img src="src/img/Logo.svg" alt=""></div>
+        <div class="header-top__search"><img src="src/img/search.svg" width="18px" alt=""></div>
+    </div>
+</div>
+<div class="header-sticky-bottom _sticky js-sticky">
+    <div class="header-sticky-list">
+        <div class="header-sticky-list__item"><a href="#">Demos</a></div>
+        <div class="header-sticky-list__item header-sticky-list__item_hover">
+            <a href="#">Post</a>
+            <ul class="submenu">
+                <li class="submenu__item"><a href="#">Post Header</a></li>
+                <li class="submenu__item"><a href="#">Post Layout</a></li>
+                <li class="submenu__item"><a href="#">Share Buttons</a></li>
+                <li class="submenu__item"><a href="#">Gallery Post</a></li>
+                <li class="submenu__item"><a href="#">Video Post</a></li>
+            </ul>
+        </div>
+        <div class="header-sticky-list__item"><a href="#">Features</a></div>
+        <div class="header-sticky-list__item"><a href="#">Categories</a></div>
+        <div class="header-sticky-list__item"><a href="#">Shop</a></div>
+        <div class="header-sticky-list__item"><a href="#">Buy Now</a></div>
     </div>
 </div>
 <div class="article-block">
@@ -44,7 +61,7 @@
         <div class="article-block-text-wrapper">
             <p class="article-block-category">Lifestyle</p>
             <p class="article-block-title entry-title">Eat Right For Your Exercise Regime</p>
-            <p class="article-block-note"><strong>Niek Bove</strong> April 8, 2018 3K Views</p>
+            <p class="article-block-note"><strong>Niek Bove</strong> <span class="article-block-note__date">April 8, 2018</span> <span class="article-block-note__views">3K Views</span></p>
             <p class="article-block-text">Structured gripped tape invisible moulded cups for sauppor firm hold strong powermesh front liner sport detail. Warmth comfort hangs loosely from the body large pocket at the front full button…</p>
         </div>
     </div>
@@ -55,7 +72,7 @@
         <div class="article-block-text-wrapper">
             <p class="article-block-category">Lifestyle</p>
             <p class="article-block-title entry-title">The Look: Perfect Balance</p>
-            <p class="article-block-note"><strong>Niek Bove</strong> April 8, 2018 3K Views</p>
+            <p class="article-block-note"><strong>Niek Bove</strong> <span class="article-block-note__date">April 8, 2018</span> <span class="article-block-note__views">3K Views</span></p>
             <p class="article-block-text">Structured gripped tape invisible moulded cups for sauppor firm hold strong powermesh front liner sport detail. Warmth comfort hangs loosely from the body large pocket at the front full button…</p>
         </div>
     </div>
@@ -66,7 +83,7 @@
         <div class="article-block-text-wrapper">
             <p class="article-block-category">Style</p>
             <p class="article-block-title entry-title">Fun Things to Do in Rome</p>
-            <p class="article-block-note"><strong>Niek Bove</strong> April 8, 2018 3K Views</p>
+            <p class="article-block-note"><strong>Niek Bove</strong> <span class="article-block-note__date">April 8, 2018</span> <span class="article-block-note__views">3K Views</span></p>
             <p class="article-block-text">Structured gripped tape invisible moulded cups for sauppor firm hold strong powermesh front liner sport detail. Warmth comfort hangs loosely from the body large pocket at the front full button…</p>
         </div>
     </div>
@@ -79,7 +96,7 @@
         <div class="article-block-text-wrapper">
             <p class="article-block-category">Style</p>
             <p class="article-block-title entry-title">24 Colorful Ceilings That Add Unexpected Contrast to Any Room</p>
-            <p class="article-block-note"><strong>Niek Bove</strong> April 8, 2018 3K Views</p>
+            <p class="article-block-note"><strong>Niek Bove</strong> <span class="article-block-note__date">April 8, 2018</span> <span class="article-block-note__views">3K Views</span></p>
             <p class="article-block-text">Structured gripped tape invisible moulded cups for sauppor firm hold strong powermesh front liner sport detail. Warmth comfort hangs loosely from the body large pocket at the front full button…</p>
         </div>
     </div>
@@ -90,7 +107,7 @@
         <div class="article-block-text-wrapper">
             <p class="article-block-category">Lifestyle</p>
             <p class="article-block-title entry-title">9 New Songs to Heat Up Your Fall Playlist</p>
-            <p class="article-block-note"><strong>Niek Bove</strong> April 8, 2018 3K Views</p>
+            <p class="article-block-note"><strong>Niek Bove</strong> <span class="article-block-note__date">April 8, 2018</span> <span class="article-block-note__views">3K Views</span></p>
             <p class="article-block-text">Structured gripped tape invisible moulded cups for sauppor firm hold strong powermesh front liner sport detail. Warmth comfort hangs loosely from the body large pocket at the front full button…</p>
         </div>
     </div>
@@ -101,7 +118,7 @@
         <div class="article-block-text-wrapper">
             <p class="article-block-category">Events</p>
             <p class="article-block-title entry-title">What You Need on Your Bedside Table</p>
-            <p class="article-block-note"><strong>Niek Bove</strong> April 8, 2018 3K Views</p>
+            <p class="article-block-note"><strong>Niek Bove</strong> <span class="article-block-note__date">April 8, 2018</span> <span class="article-block-note__views">3K Views</span></p>
             <p class="article-block-text">Structured gripped tape invisible moulded cups for sauppor firm hold strong powermesh front liner sport detail. Warmth comfort hangs loosely from the body large pocket at the front full button…</p>
         </div>
     </div>
@@ -113,7 +130,7 @@
         <div class="article-block-text-wrapper">
             <p class="article-block-category">Travel</p>
             <p class="article-block-title entry-title">When Two Wheels Are Better Than Four</p>
-            <p class="article-block-note"><strong>Niek Bove</strong> April 8, 2018 3K Views</p>
+            <p class="article-block-note"><strong>Niek Bove</strong> <span class="article-block-note__date">April 8, 2018</span> <span class="article-block-note__views">3K Views</span></p>
             <p class="article-block-text">Structured gripped tape invisible moulded cups for sauppor firm hold strong powermesh front liner sport detail. Warmth comfort hangs loosely from the body large pocket at the front full button…</p>
         </div>
     </div>
@@ -124,7 +141,7 @@
         <div class="article-block-text-wrapper">
             <p class="article-block-category">Travel</p>
             <p class="article-block-title entry-title">26 Living Room Ideas from the Homes of Top Designers</p>
-            <p class="article-block-note"><strong>Niek Bove</strong> April 8, 2018 3K Views</p>
+            <p class="article-block-note"><strong>Niek Bove</strong> <span class="article-block-note__date">April 8, 2018</span> <span class="article-block-note__views">3K Views</span></p>
             <p class="article-block-text">Structured gripped tape invisible moulded cups for sauppor firm hold strong powermesh front liner sport detail. Warmth comfort hangs loosely from the body large pocket at the front full button…</p>
         </div>
     </div>
@@ -135,13 +152,14 @@
         <div class="article-block-text-wrapper">
             <p class="article-block-category">Music</p>
             <p class="article-block-title entry-title">What Makes Your City’s Style Unique</p>
-            <p class="article-block-note"><strong>Niek Bove</strong> April 8, 2018 3K Views</p>
+            <p class="article-block-note"><strong>Niek Bove</strong> <span class="article-block-note__date">April 8, 2018</span> <span class="article-block-note__views">3K Views</span></p>
             <p class="article-block-text">Structured gripped tape invisible moulded cups for sauppor firm hold strong powermesh front liner sport detail. Warmth comfort hangs loosely from the body large pocket at the front full button…</p>
         </div>
     </div>
 </div>
 </body>
-<script src="js/all.js"></script>
+<script src="destination/jquery-3.4.1.min.js"></script>
+<script src="destination/script1.js"></script>
 </html>
 
 <style>

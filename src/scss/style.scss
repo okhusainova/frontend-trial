@@ -1,5 +1,9 @@
 $screen-tablet: 1280px;
-$screen-phone: 768px;
+$screen-phone: 767px;
+
+* {
+  outline: none;
+}
 
 html, body {
   margin: 0;
@@ -10,13 +14,19 @@ html, body {
   font-size: 62.5%;
 }
 
+._hide-on-desktop {
+  @media (min-width: 1281px) {
+    display: none!important;
+  }
+}
+
 .article-block {
   display: flex;
   flex-direction: row;
   max-width: 1160px;
   flex-wrap: wrap;
   width: 100%;
-  margin: 0 auto;
+  margin: 2rem auto 0;
   justify-content: space-between;
 
   @media (max-width: $screen-tablet) {
@@ -57,10 +67,9 @@ html, body {
 
 .header-sticky {
   width: 100%;
-  margin-bottom: 3rem;
 }
 
-.header-sticky-top {
+.header-top {
   width: 100%;
   height: 82px;
   position: relative;
@@ -80,6 +89,59 @@ html, body {
       width: 95%;
     }
   }
+
+  &__menu,
+  &__logo,
+  &__search {
+    cursor: pointer;
+  }
+
+  &__logo {
+    @media (max-width: $screen-tablet) and (max-width: $screen-phone) {
+      visibility: visible;
+      margin-right: auto;
+    }
+
+    @media (max-width: $screen-tablet) {
+      margin-left: 2rem;
+    }
+
+    @media (max-width: $screen-phone) {
+      margin-left: 0;
+    }
+  }
+
+  &__menu {
+    visibility: hidden;
+
+    @media (max-width: $screen-tablet) {
+      display: none;
+    }
+  }
+
+  &__search {
+    @media (max-width: $screen-tablet) {
+      visibility: hidden;
+    }
+
+    @media (max-width: $screen-phone) {
+      display: none;
+    }
+  }
+}
+
+.article-block-note {
+  &__date,
+  &__views {
+    color: #9B9B9B;
+  }
+
+  &__date {
+    &:before,
+    &:after {
+      content: '⠂';
+    }
+  }
 }
 
 .header-sticky-bottom {
@@ -87,14 +149,28 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #fff;
   position: sticky;
+  top: 0;
+  transform: translateY(-40px);
+  transition: all .35s ease;
 
-  @media (max-width: $screen-phone) {
+  &._sticky {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &._without-sticky {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  @media (max-width: $screen-tablet) {
     display: none;
   }
 }
 
-.header-sticky-top,
+.header-top,
 .header-sticky-bottom {
   &:after {
     content: "";
@@ -130,6 +206,7 @@ html, body {
         height: auto;
         visibility: visible;
         display: block;
+        transition-delay: 0s;
       }
     }
 
@@ -162,6 +239,7 @@ html, body {
 .article-block-category {
   margin-bottom: 2.6rem;
 }
+
 .article-block-image-wrapper img {
   width: 100%;
   display: block;
@@ -172,7 +250,7 @@ html, body {
   visibility: hidden;
   opacity: 0;
   height: auto;
-  transition: opacity .2s linear .3s;
+  transition: all .2s linear .3s;
   border: 1px solid #e1e1e1;
   list-style: none;
   width: 176px;
@@ -184,7 +262,7 @@ html, body {
   top: 37px;
   left: 2%;
   margin: 0;
-  transition-duration: 2s;
+  transition-delay: 0.2s;
 
   &__item {
     border-bottom: 1px solid #e1e1e1;
@@ -214,11 +292,13 @@ html, body {
       color: #969696;
       transition: all .3s ease;
       padding-left: .7rem;
+
       .submenu {
         opacity: 1;
         height: auto;
         visibility: visible;
         display: block;
+        transition-delay: 0s;
       }
     }
 
@@ -226,4 +306,167 @@ html, body {
       font-size: 1.3rem;
     }
   }
+}
+
+
+#nav-container {
+  position: absolute;
+  height: 100vh;
+  width: 95%;
+  pointer-events: none;
+}
+
+#nav-container .bg {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 70px);
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  background: #000;
+
+  @media (max-width: $screen-tablet) {
+    top: 54px;
+  }
+}
+
+#nav-container:focus-within .bg {
+  visibility: visible;
+  opacity: .6;
+}
+
+#nav-container * {
+  visibility: visible;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  width: 30px;
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
+  margin-left: auto;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+
+  @media (max-width: $screen-tablet) {
+    margin-right: 28px;
+  }
+
+  @media (max-width: $screen-phone) {
+    margin-right: 0;
+  }
+}
+
+.icon-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #000000;
+  transition: .3s;
+}
+
+.icon-bar + .icon-bar {
+  margin-top: 5px;
+}
+
+.nav-container {
+  &:focus-within .button {
+    pointer-events: none;
+  }
+
+  &:focus-within .icon-bar:nth-of-type(1) {
+    transform: translate3d(0, 8px, 0) rotate(45deg);
+  }
+
+  &:focus-within .icon-bar:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  &:focus-within .icon-bar:nth-of-type(3) {
+    transform: translate3d(0, -8px, 0) rotate(-45deg);
+  }
+}
+
+
+#nav-container:focus-within .icon-bar:nth-of-type(3) {
+  transform: translate3d(0, -8px, 0) rotate(-45deg);
+}
+
+#nav-content {
+  padding: 30px;
+  width: 70%;
+  max-width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 70px);
+  background: #ffffff;
+  pointer-events: auto;
+  transform: translateX(-100%);
+  transition: transform .3s;
+  will-change: transform;
+  contain: paint;
+  color: #000000;
+  margin-top: 54px;
+  margin-left: -3px;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#nav-content ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  list-style: none;
+}
+
+#nav-content li {
+  border-bottom: 1px solid #E9E9E9;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+#nav-content li a {
+  padding: 10px 5px;
+  display: inline-block;
+  transition: color .1s;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: normal;
+  position: relative;
+  color: #000000;
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: -1.5rem;
+    top: 1.3rem;
+    transform: rotate(-45deg);
+    width: 7px;
+    height: 7px;
+    border-left: .1px solid #000;
+    border-bottom: .1px solid #000;
+    transition: all .3s ease;
+  }
+
+  &:hover {
+    color: #BF7497;
+  }
+}
+
+
+#nav-container:focus-within #nav-content {
+  transform: none;
 }

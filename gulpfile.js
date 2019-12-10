@@ -4,12 +4,11 @@ var minifyCss   = require('gulp-minify-css');
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 var coffee      = require('gulp-coffee');
-var runSequence = require('run-sequence');
 
 var paths = {
     html:['index.html'],
     css:['src/scss/*.scss'],
-    script:['script.coffee']
+    script:['src/js/*.js']
 };
 
 gulp.task('sass', function(){
@@ -36,12 +35,13 @@ gulp.task('browserSync', function() {
 });
 
 gulp.task('scripts', function(){
-    return gulp.src(paths.script)
-        .pipe(coffee())
+    return gulp.src([
+        'src/js/libs/jquery/dist/jquery-3.4.1.min.js',
+        'src/js/*.js'
+    ])
         .pipe(gulp.dest('destination'))
         .pipe(reload({stream:true}));
 });
-
 
 gulp.task('reload', function (done) {
     browserSync.reload();
