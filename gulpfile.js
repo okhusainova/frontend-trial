@@ -21,6 +21,7 @@ gulp.task('sass', function(){
 
 gulp.task('html', function(){
     return gulp.src(paths.html)
+        .pipe(gulp.dest('destination'))
         .pipe(reload({stream:true}));
 });
 
@@ -53,5 +54,7 @@ gulp.task('watcher',function(){
     gulp.watch(paths.css, gulp.series('sass', 'html'));
     gulp.watch(paths.script, gulp.series('scripts'));
 });
+
+gulp.task('builder', gulp.parallel('sass', 'html', 'scripts'));
 
 gulp.task('default', gulp.parallel('browserSync', 'watcher'));

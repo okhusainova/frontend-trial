@@ -359,7 +359,7 @@ html, body {
 
 
   @media (max-width: $screen-tablet) {
-    margin-right: 28px;
+    margin-right: 2.8rem;
   }
 
   @media (max-width: $screen-phone) {
@@ -376,7 +376,7 @@ html, body {
 }
 
 .icon-bar + .icon-bar {
-  margin-top: 5px;
+  margin-top: .5rem;
 }
 
 .nav-container {
@@ -403,7 +403,7 @@ html, body {
 }
 
 #nav-content {
-  padding: 30px;
+  padding: 3.0rem;
   width: 70%;
   max-width: 300px;
   position: absolute;
@@ -417,8 +417,8 @@ html, body {
   will-change: transform;
   contain: paint;
   color: #000000;
-  margin-top: 54px;
-  margin-left: -3px;
+  margin-top: 5.4rem;
+  margin-left: -.3rem;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
@@ -439,7 +439,7 @@ html, body {
 }
 
 #nav-content li a {
-  padding: 10px 5px;
+  padding: 1rem .5rem;
   display: inline-block;
   transition: color .1s;
   text-decoration: none;

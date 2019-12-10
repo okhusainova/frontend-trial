@@ -5,7 +5,8 @@
   "main": ".eslintrc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "gulp default"
+    "dev": "gulp default",
+    "build": "gulp builder"
   },
   "author": "",
   "license": "ISC",
